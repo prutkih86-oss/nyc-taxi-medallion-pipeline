@@ -22,7 +22,7 @@ The project demonstrates incremental ingestion, automated data validation, quara
 
 ![NYC Taxi Analytics Dashboard — Overview](docs/images/dashboard_overview_v2.jpg)
 
-![NYC Taxi Analytics Dashboard — Detailed Analysis](docs/images/dashboard_details_v2.jpg)
+![NYC Taxi Analytics Dashboard — Detailed Analysis](docs/images/dashboard_details_v3.jpg)
 
 ---
 
