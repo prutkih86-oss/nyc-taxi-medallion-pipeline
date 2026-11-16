@@ -1,4 +1,4 @@
-# Databricks notebook source
+
 from pyspark.sql import functions as F
 from delta.tables import DeltaTable
 
@@ -88,7 +88,26 @@ assert validated.filter(F.col("trip_key").isNull()).count() == 0
 
 print("INPUT DATA QUALITY PASSED")
 
-# 6. Incremental MERGE into Silver
+# 6. Initialize target Delta tables on first run
+if not spark.catalog.tableExists(SILVER):
+    (
+        silver_batch.limit(0)
+        .write
+        .format("delta")
+        .saveAsTable(SILVER)
+    )
+    print("SILVER TABLE INITIALIZED")
+
+if not spark.catalog.tableExists(QUARANTINE):
+    (
+        quarantine_batch.limit(0)
+        .write
+        .format("delta")
+        .saveAsTable(QUARANTINE)
+    )
+    print("QUARANTINE TABLE INITIALIZED")
+
+# 7. Incremental MERGE into Silver
 silver_target = DeltaTable.forName(spark, SILVER)
 
 (
@@ -103,7 +122,7 @@ silver_target = DeltaTable.forName(spark, SILVER)
 
 print("SILVER MERGE COMPLETED")
 
-# 7. Incremental MERGE into Quarantine
+# 8. Incremental MERGE into Quarantine
 quarantine_target = DeltaTable.forName(
     spark, QUARANTINE
 )
@@ -120,7 +139,7 @@ quarantine_target = DeltaTable.forName(
 
 print("QUARANTINE MERGE COMPLETED")
 
-# 8. Verify persisted results
+# 9. Verify persisted results
 silver_result = spark.table(SILVER)
 quarantine_result = spark.table(QUARANTINE)
 
