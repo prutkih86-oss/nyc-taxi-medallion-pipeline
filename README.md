@@ -325,27 +325,42 @@ An interactive Databricks AI/BI Dashboard was developed to analyze historical ta
 | Rejection Rate | 0.49% |
 | Rejected Trips | 108 |
 
+
 ### Visualizations
 
-**Daily Trips Trend**
+#### Daily Taxi Demand | Jan–Feb 2016
 
-Daily trip volume for January–February 2016.
+Daily trip volumes with an annotated anomaly on January 23, 2016, coinciding with Blizzard Jonas.
 
-**Daily Fare Revenue**
+#### Evening Hours Drive Taxi Demand
 
-Daily total taxi fares in USD.
+Hourly demand heatmap showing taxi activity by weekday and pickup hour, with stronger demand during evening hours.
 
-**Taxi Demand Heatmap**
+#### Most Taxi Trips Are Under 3 Miles
 
-Trip distribution by weekday and hour of day.
+Trip distance distribution across five distance ranges.
 
-**Top 10 Pickup ZIP Codes**
+**73.9% of valid trips (16,134 of 21,824)** were shorter than 3 miles. The **1–3 mile** range accounted for the largest share.
 
-Highest-volume pickup ZIP codes.
+#### Top 10 Pickup Locations
 
-**Data Quality — Rejection Reasons**
+The ten highest-volume pickup ZIP codes, highlighting geographic concentrations of taxi demand.
 
-Breakdown of quarantined records by validation failure category.
+#### Invalid Distance Leads Rejections
+
+Breakdown of 108 quarantined records by rejection reason.
+
+**Invalid distance** was the most frequent rejection category, accounting for **74 records**.
+
+#### Data Quality Summary
+
+A consolidated view of historical data quality:
+
+- **21,932** raw trips
+- **21,824** valid trips
+- **108** rejected trips
+- **99.51%** validation pass rate
+
 
 ### Data Scope
 
@@ -389,8 +404,8 @@ nyc-taxi-medallion-pipeline/
 |
 |-- docs/
 |   `-- images/
-|       |-- dashboard_overview.jpg
-|       |-- dashboard_details.jpg
+|       |-- dashboard_overview_v2.jpg
+|       |-- dashboard_details_v5.jpg
 |       |-- etl_workflow.jpg
 |       `-- .gitkeep
 |
