@@ -342,11 +342,13 @@ Trip distance distribution across five distance ranges.
 
 **73.9% of valid trips (16,134 of 21,824)** were shorter than 3 miles. The **1–3 mile** range accounted for the largest share.
 
-#### Top 10 Pickup Locations
+#### Early Morning Trips Have Higher Average Fares
 
-The ten highest-volume pickup ZIP codes, highlighting geographic concentrations of taxi demand.
+Average taxi fare by pickup hour, revealing higher fares during early morning hours.
 
-#### Invalid Distance Leads Rejections
+The highest average fare was **$14.89 at 04:00**, based on **247 trips**, compared with **$11.46 at 12:00**. Interactive tooltips also display trip counts.
+
+#### Data Rejection Reasons
 
 Breakdown of 108 quarantined records by rejection reason.
 
@@ -360,7 +362,6 @@ A consolidated view of historical data quality:
 - **21,824** valid trips
 - **108** rejected trips
 - **99.51%** validation pass rate
-
 
 ### Data Scope
 
@@ -405,7 +406,7 @@ nyc-taxi-medallion-pipeline/
 |-- docs/
 |   `-- images/
 |       |-- dashboard_overview_v2.jpg
-|       |-- dashboard_details_v5.jpg
+|       |-- dashboard_details_v6.jpg
 |       |-- etl_workflow.jpg
 |       `-- .gitkeep
 |
